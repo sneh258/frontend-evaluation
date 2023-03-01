@@ -23,4 +23,25 @@ describe('Home', () => {
     expect(mockNavigate).toBeCalledTimes(1);
     expect(mockNavigate).toHaveBeenCalledWith('/');
   });
+  it('should navigate to the bookmarked page when the bookmark buton is clicked', () => {
+    render(<Card_header/>);
+    expect(mockNavigate).toBeCalledTimes(0);
+    fireEvent.click(screen.getByText('Bookmarked'));
+    expect(mockNavigate).toBeCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith('/bookmark');
+  });
+  it('should navigate to the seats available page when the seats available buton is clicked', () => {
+    render(<Card_header/>);
+    expect(mockNavigate).toBeCalledTimes(0);
+    fireEvent.click(screen.getByText('Seats Available'));
+    expect(mockNavigate).toBeCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith('/seat');
+  });
+  it('should navigate to the registered page when the register buton is clicked', () => {
+    render(<Card_header/>);
+    expect(mockNavigate).toBeCalledTimes(0);
+    fireEvent.click(screen.getByText('Registered'));
+    expect(mockNavigate).toBeCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith('/register');
+  });
 });
