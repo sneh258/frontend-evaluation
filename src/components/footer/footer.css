@@ -1,0 +1,38 @@
+.footer{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    color: white;
+    background-color: black;
+}
+
+.footer_content{
+    display: flex;
+    margin-left: 90px;
+    
+    
+}
+
+.theme1{
+    margin-left: 10px;
+    background-color: violet;
+    color: violet;
+    border: none;
+}
+.theme2{
+    margin-left: 15px;
+    background-color: rgb(52, 10, 238);
+    color: rgb(3, 41, 229);
+    border: none;
+}
+.theme3{
+    margin-left: 15px;
+    background-color:#9b9999;
+    color: #9b9999;
+    border: none;
+}
