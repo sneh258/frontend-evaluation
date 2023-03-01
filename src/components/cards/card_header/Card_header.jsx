@@ -1,19 +1,31 @@
 import React from 'react';
 import './card_header.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 export default function Card_header() {
   return (
     <div className="actions">
-      <span className="filter">FILTER</span>
-      <div className="search">
-        {/* <input className="search_event" type='text' placeholder='hi'>Event Name</input> */}
-        <span>search</span>
+      <div className="action">
+        <div className="filter">
+          filter <FontAwesomeIcon icon={faFilter} />
+        </div>
+        <div>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <input type={'text'} placeholder="search" />
+        </div>
       </div>
       <div className="filter_options">
-        <span>All</span>
-        <span>Registered</span>
-        <span>Bookmarked</span>
-        <span>Seats Available</span>
+        <div className="option1">
+          <FontAwesomeIcon icon="fa-light fa-circle" />
+          <span>All</span>
+          <span>Registered</span>
+        </div>
+        <div className="option2">
+          <span>Bookmarked</span>
+          <span>Seats Available</span>
+        </div>
       </div>
     </div>
   );

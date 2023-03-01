@@ -1,7 +1,7 @@
 .container{
     /* border: 2px solid red; */
-    width: 270px;
-    height: 350px;
+    width: 300px;
+    height: 400px;
     background-color: black;
     color: white;
     margin-top: 20px;
@@ -20,28 +20,63 @@ img{
 .title{
     /* border: 2px solid red; */
     height: 10%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 25px;
 }
 
 .description{
     /* border: 2px solid red; */
     height: 10%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    font-weight:bolder;
 }
-
 .description p{
+   padding-left: 20px;
+   padding-right:20px;
     overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  
 }
 
 .venue{
 /* border: 2px solid red; */
+padding-right: 10px;
+padding-left: 50px;
     height: 10%;
+    display: flex;
+    justify-content: center;
+     font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.venue span{
+    font-weight: bolder;
+}
+
+.date span{
+    font-weight: bolder;
 }
 
 .date{
 /* border: 2px solid red; */
+font-family: 'Sofia Sans Semi Condensed', sans-serif;
+padding-right: 10px;
+padding-left: 50px;
     height: 10%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .show{
@@ -54,10 +89,14 @@ img{
 
 .register{
     /* border: 2px solid red; */
+    padding-top: 10px;
+    padding-left: 20px;
     
 }
 
 .bookmark{
     /* border: 2px solid red; */
+    padding-top: 10px;
+    padding-right: 20px;
    
 }

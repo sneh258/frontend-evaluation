@@ -1,18 +1,42 @@
-.actions{
-border: 2px solid red;
+.actions {
+  /* border: 2px solid red; */
+  margin-left: 350px;
+  margin-right: 350px;
 }
 
-.filter{
-    display: flex;
-    border: 2px solid black;
-    width: fit-content;
-    font-size: 25px;
+.action {
+  display: flex;
+  justify-content: space-between;
 }
 
-.search{
-    display: flex;
-    border: 2px solid black;
-    justify-content: flex-end;
-    margin-left: 96%;
-    width: fit-content;
+.filter {
+  display: flex;
+  border: 2px solid black;
+  width: fit-content;
+  font-size: 25px;
+}
+.fa-magnifying-glass{
+    border-radius: 2px solid red;
+}
+
+.search {
+  display: flex;
+  border: 2px solid black;
+  width: fit-content;
+}
+
+.filter_options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.option1 {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.option2 {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 }

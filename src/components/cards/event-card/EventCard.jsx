@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './eventCard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 
 export default function EventCard({post}) {
   return (
@@ -13,11 +15,16 @@ export default function EventCard({post}) {
         <div className="description">
           <p>{post.description}</p>
         </div>
-        <div className="venue">{post.venue}</div>
-        <div className="date">{post.datetime}</div>
+        <div className="venue">
+          <span>VENUE: </span>
+          {post.venue}
+        </div>
+        <div className="date"><span>DATE:</span>{post.datetime}</div>
         <div className="show">
           <div className="register">register</div>
-          <i className="fa-regular fa-bookmark"></i>
+          <div className="bookmark">
+            <FontAwesomeIcon icon={faBookmark} />
+          </div>
         </div>
       </div>
     </div>
