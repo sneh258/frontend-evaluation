@@ -56,12 +56,12 @@ export default function EventCard({ post }) {
   const dateTime = time.tz(post.timezone).format('DD MMM YYYY HH:mm z');
 
   return (
-    <div className="container">
+    <div data-testid='events' className="container">
       <div className="image">
         <img
           src={post.imgUrl}
           alt="show"
-        //   onClick={() => <EventDetail post={post.id} />}
+          //   onClick={() => <EventDetail post={post.id} />}
         />
       </div>
       <div className="card_content">
@@ -84,7 +84,9 @@ export default function EventCard({ post }) {
               handleRegister();
             }}
           >
-            {post.isRegistered && post.areSeatsAvailable ? (
+            {!post.isRegistered && post.areSeatsAvailable ? (
+              <div>Register</div>
+            ) : post.isRegistered && post.areSeatsAvailable ? (
               <div>
                 <FontAwesomeIcon icon={faCheckCircle} color="green" />
                 Registered
@@ -92,7 +94,7 @@ export default function EventCard({ post }) {
             ) : (
               !post.areSeatsAvailable && (
                 <div>
-                  <FontAwesomeIcon icon={faCircleXmark} color='yellow' />
+                  <FontAwesomeIcon icon={faCircleXmark} color="yellow" />
                   No Seats Available
                 </div>
               )
