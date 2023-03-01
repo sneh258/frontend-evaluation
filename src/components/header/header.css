@@ -1,0 +1,16 @@
+.header{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    background-color: black;
+}
+
+.header_name{
+    margin-left: 90px;
+    font-size: 45px;
+    color: white;
+    background-color: black;
+    font-family: 'Big Shoulders Inline Display', cursive;
+}
