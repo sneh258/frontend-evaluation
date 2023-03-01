@@ -7,6 +7,8 @@
     bottom: 0;
     width: 100%;
     position: absolute;
+    position: -webkit-sticky; 
+  position: sticky;
     color: white;
     background-color: black;
 }
@@ -34,5 +36,5 @@
     margin-left: 15px;
     background-color:#9b9999;
     color: #9b9999;
-    border: none;
+    
 }

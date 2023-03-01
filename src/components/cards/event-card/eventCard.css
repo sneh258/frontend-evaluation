@@ -1,0 +1,63 @@
+.container{
+    /* border: 2px solid red; */
+    width: 270px;
+    height: 350px;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+}
+
+.image{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    height: 50%;
+
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    /* border: 2px solid red; */
+    height: 10%;
+}
+
+.description{
+    /* border: 2px solid red; */
+    height: 10%;
+}
+
+.description p{
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.venue{
+/* border: 2px solid red; */
+    height: 10%;
+}
+
+.date{
+/* border: 2px solid red; */
+    height: 10%;
+}
+
+.show{
+    /* border: 2px solid red; */
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.register{
+    /* border: 2px solid red; */
+    
+}
+
+.bookmark{
+    /* border: 2px solid red; */
+   
+}

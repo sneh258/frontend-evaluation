@@ -1,0 +1,18 @@
+.actions{
+border: 2px solid red;
+}
+
+.filter{
+    display: flex;
+    border: 2px solid black;
+    width: fit-content;
+    font-size: 25px;
+}
+
+.search{
+    display: flex;
+    border: 2px solid black;
+    justify-content: flex-end;
+    margin-left: 96%;
+    width: fit-content;
+}
