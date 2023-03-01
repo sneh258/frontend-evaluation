@@ -12,7 +12,6 @@
 
 .filter {
   display: flex;
-  /* border: 2px solid black; */
   width: fit-content;
   font-size: 20px;
 }
@@ -31,15 +30,30 @@
   justify-content: space-between;
 }
 
-.option1 {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.option2 {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
+.option1{
+    padding-top: 20px;
+    cursor: pointer;
+    
 }
 
+.option2{
+    padding-top: 20px;
+    cursor: pointer;
+}
 
+.all:hover{
+    background-color: black;
+    color: white;
+}
+.register:hover{
+    background-color: black;
+    color: white;
+}
+.seats:hover{
+    background-color: black;
+    color: white;
+}
+.bookmark:hover{
+    background-color: black;
+    color: white;
+}

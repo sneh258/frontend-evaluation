@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import { React, useState, useEffect } from 'react';
 import './eventCard.css';
+import EventDetail from '../../eventDetail/EventDetail';
 import makeRequest from '../../../utils/makeRequest/makeRequest';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
@@ -9,13 +10,14 @@ import { faBookBookmark } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment-timezone';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 import {
   GET_BY_EVENT_DATA,
   UPDATE_EVENT_DATA,
 } from '../../../constants/apiEndPoints';
 
-export default function EventCard({ post}) {
+export default function EventCard({ post }) {
   const [isBookmarked, setBookmark] = useState(true);
   const [isRegistered, setRegister] = useState(true);
   const [error, setError] = useState();
@@ -56,7 +58,11 @@ export default function EventCard({ post}) {
   return (
     <div className="container">
       <div className="image">
-        <img src={post.imgUrl} alt="show" />
+        <img
+          src={post.imgUrl}
+          alt="show"
+        //   onClick={() => <EventDetail post={post.id} />}
+        />
       </div>
       <div className="card_content">
         <div className="title">{post.name}</div>
@@ -78,13 +84,18 @@ export default function EventCard({ post}) {
               handleRegister();
             }}
           >
-            {isRegistered ? (
+            {post.isRegistered && post.areSeatsAvailable ? (
               <div>
-                <FontAwesomeIcon icon={faCheckCircle} color="green" />{' '}
+                <FontAwesomeIcon icon={faCheckCircle} color="green" />
                 Registered
               </div>
             ) : (
-              <FontAwesomeIcon icon={faCircle} />
+              !post.areSeatsAvailable && (
+                <div>
+                  <FontAwesomeIcon icon={faCircleXmark} color='yellow' />
+                  No Seats Available
+                </div>
+              )
             )}
           </div>
           <div
