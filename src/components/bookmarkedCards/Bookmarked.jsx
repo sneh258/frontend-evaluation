@@ -1,20 +1,24 @@
 import React from 'react';
-import EventCard from '../event-card/EventCard';
-import './eventCards.css';
+import EventCard from '../cards/event-card/EventCard';
 import { useState, useEffect } from 'react';
-import makeRequest from '../../../utils/makeRequest/makeRequest';
-import { GET_EVENT_DATA } from '../../../constants/apiEndPoints';
+import makeRequest from '../../utils/makeRequest/makeRequest';
+import { GET_EVENT_DATA } from '../../constants/apiEndPoints';
+import './bookmarked.css';
 
-export default function EventCards() {
+export default function Bookmarked() {
   const [eventData, setEventData] = useState([]);
   const [error, setError] = useState();
 
   useEffect(() => {
     makeRequest(GET_EVENT_DATA)
-      .then((respone) => setEventData(respone))
+      .then((response) => {
+        if (response) {
+          const data = response.filter((x) => x.isBookmarked === true);
+          setEventData(data);
+        }
+      })
       .catch((e) => {
         setError(e.message);
-
       });
   }, []);
 
@@ -25,7 +29,7 @@ export default function EventCards() {
       </div>
     );
   }
-
+  
   return eventData.length !== 0 ? (
     <div className="main_container">
       {eventData.map((post) => (

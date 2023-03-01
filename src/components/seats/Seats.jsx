@@ -1,20 +1,24 @@
 import React from 'react';
-import EventCard from '../event-card/EventCard';
-import './eventCards.css';
+import EventCard from '../cards/event-card/EventCard';
 import { useState, useEffect } from 'react';
-import makeRequest from '../../../utils/makeRequest/makeRequest';
-import { GET_EVENT_DATA } from '../../../constants/apiEndPoints';
+import makeRequest from '../../utils/makeRequest/makeRequest';
+import { GET_EVENT_DATA } from '../../constants/apiEndPoints';
+import './seats.css';
 
-export default function EventCards() {
+export default function Seats() {
   const [eventData, setEventData] = useState([]);
   const [error, setError] = useState();
 
   useEffect(() => {
     makeRequest(GET_EVENT_DATA)
-      .then((respone) => setEventData(respone))
+      .then((response) => {
+        if (response) {
+          const data = response.filter((x) => x.areSeatsAvailable === true);
+          setEventData(data);
+        }
+      })
       .catch((e) => {
         setError(e.message);
-
       });
   }, []);
 

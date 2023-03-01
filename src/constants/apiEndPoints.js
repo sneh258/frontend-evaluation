@@ -11,7 +11,7 @@ export const GET_BY_EVENT_DATA = (id) => ({
   method: 'get',
 });
 
-export const UPDATE_BLOG_DATA = (id) => ({
+export const UPDATE_EVENT_DATA = (id) => ({
   url: `events/${id}`,
   method: 'patch',
 });
