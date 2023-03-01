@@ -8,7 +8,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('Home', () => {
-  it('should show the home page text and sync button when the home page is rendered', () => {
+  it('should show the home page when the home page is rendered', () => {
     render(<Card_header/>);
     expect(screen.getByText('filter')).toBeTruthy();
     expect(screen.getByText('Registered')).toBeTruthy();
@@ -16,7 +16,7 @@ describe('Home', () => {
     expect(screen.getByText('Seats Available')).toBeTruthy();
     expect(screen.getByText('All')).toBeTruthy();
   });
-  it('should navigate to the songs page when the sync buton is clicked', () => {
+  it('should navigate to the home page when the All buton is clicked', () => {
     render(<Card_header/>);
     expect(mockNavigate).toBeCalledTimes(0);
     fireEvent.click(screen.getByText('All'));
