@@ -3,8 +3,14 @@ import React from 'react';
 import './eventCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
+import moment from 'moment-timezone';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function EventCard({post}) {
+export default function EventCard({ post }) {
+  // const [bookmark, setBookmark] = useState();
+  const time = moment(post.datetime);
+  const dateTime = time.tz(post.timezone).format('DD MMM YYYY HH:mm z');
+
   return (
     <div className="container">
       <div className="image">
@@ -19,11 +25,16 @@ export default function EventCard({post}) {
           <span>VENUE: </span>
           {post.venue}
         </div>
-        <div className="date"><span>DATE:</span>{post.datetime}</div>
+        <div className="date">
+          <span>DATE:</span>
+          {dateTime}
+        </div>
         <div className="show">
-          <div className="register">register</div>
+          <div className="register">
+            <FontAwesomeIcon icon={faCheckCircle} size="1x" color="#42f551" />
+          </div>
           <div className="bookmark">
-            <FontAwesomeIcon icon={faBookmark} />
+            <FontAwesomeIcon icon={faBookmark} color='red'/>
           </div>
         </div>
       </div>
